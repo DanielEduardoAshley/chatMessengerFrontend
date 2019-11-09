@@ -36,11 +36,10 @@ useEffect(()=>{
                         }
                       </div>
                       <div className="search">
-                            <div className="">
-                                    <input type="text"  placeholder="Enter Message" ></input>
-                                    <div className="submit">
-                                    <span>Submit</span>
-                                    </div>
+                            <div className="searchbar">
+                                    <input className="inputfield" type="text"  placeholder=" Enter Message" ></input>
+                                    <button className="submit"> Submit</button>
+                                   
                             </div>
                       </div>
                   </div>

@@ -28,7 +28,7 @@
 .header2{
     display: inline-block;
     border: 2px solid #428BCA;
-    height: 700px;
+    height: 665px;
     margin-left:35px;
     width : calc(8.33% * 5);
     color: #E2FDFE;
@@ -70,6 +70,25 @@
     /* border-radius: 5px 5px 5px 5px; */
 }
 
+/* .searchbar{
+    border: 1px solid blue;
+    border-radius: 5px 5px 5px 5px;
+    width: 600px;
+} */
+
 .submit{
+    all: unset;
     background-color:#5BC0DE;
+    width:80px;
+    height: 30px;
+    color: white;
+    text-indent: 15px;
+}
+
+.inputfield{
+    width: 615px;
+    height: 30px;
+    border: none;
+    margin-top: 12px;
+    margin-left: 20px;
 }
