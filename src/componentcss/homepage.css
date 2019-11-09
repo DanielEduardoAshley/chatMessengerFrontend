@@ -13,7 +13,7 @@
 .header1{
     display: inline-block;
     border: 2px solid #D9EDF7;
-    height: 300%;
+    height: 700px;
     margin-left: 40px;
     width : calc(8.33% * 6.2);
     border-radius: 5px 5px 5px 5px;  
@@ -22,13 +22,13 @@
 
 .column-7{
     width : 100%;
-    height: 80.5%;
+    height: 595.90px;
 }
 
 .header2{
     display: inline-block;
     border: 2px solid #428BCA;
-    height: 270%;
+    height: 700px;
     margin-left:35px;
     width : calc(8.33% * 5);
     color: #E2FDFE;
@@ -65,9 +65,11 @@
 
 .search{
     background-color:#E9ECEF;
-    height: 80px;
-    width : 100%;
+    height: 50px;
     color :  #477797;
     /* border-radius: 5px 5px 5px 5px; */
 }
 
+.submit{
+    background-color:#5BC0DE;
+}

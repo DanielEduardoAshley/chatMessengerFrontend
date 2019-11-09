@@ -36,11 +36,11 @@ useEffect(()=>{
                         }
                       </div>
                       <div className="search">
-                            <div className="input-group mb-3 ">
-                                    <input type="text" className="form-control" placeholder="Type A Message" aria-label="Recipient's username" aria-describedby="basic-addon2"></input>
-                                    <div className="input-group-append">
-                                    <span className="input-group-text" id="basic-addon2">Submit</span>
-                                     </div>
+                            <div className="">
+                                    <input type="text"  placeholder="Enter Message" ></input>
+                                    <div className="submit">
+                                    <span>Submit</span>
+                                    </div>
                             </div>
                       </div>
                   </div>
