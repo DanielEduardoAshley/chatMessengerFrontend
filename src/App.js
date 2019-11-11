@@ -11,7 +11,8 @@ function App() {
   const [messages, Setmessages ] = useState([]);
   const [newMessage, SetnewMessage] = useState('');
   const [currentUser, SetcurrentUser] = useState({});
-  const [currentMessage, SetcurrentMessage] = useState([])
+  const [currentMessage, SetcurrentMessage] = useState([]);
+  const [loginStatus, SetloginStatus] = useState(false);
 
   useEffect(()=>{
     axios.get('http://localhost:3004/').then((response)=>{
@@ -24,14 +25,11 @@ function App() {
 }, [])
 
 useEffect(()=>{
-if(currentMessage.length){
-  console.log('herrro!')
-  SetnewMessage('')
+  if(currentMessage.length){
+    console.log('herrro!')
+    SetnewMessage('')
 
-
-}
-
-
+  }
 
 },[currentMessage])
 
@@ -39,14 +37,19 @@ useEffect(()=>{
   console.log('updated current user to :', currentUser)
 }, [currentUser])
 
+
   const typeFn=(e)=>{
    SetnewMessage(e.target.value)
    console.log(e.target.value)
 }
 
   const submit=()=>{
-   SetcurrentMessage(currentMessage.concat({'currentMessage': newMessage }));
+  if(!loginStatus){
+    window.location.reload(false);
 
+  }else{
+   SetcurrentMessage(currentMessage.concat({'currentMessage': newMessage }));
+       }
   }
 
 
@@ -99,7 +102,7 @@ useEffect(()=>{
           </div>
 </div>
 {
-  <Login user={currentUser} setUser={SetcurrentUser}/>
+  <Login user={currentUser} setUser={SetcurrentUser} status={SetloginStatus}/>
 }
 </>
   
