@@ -1,0 +1,39 @@
+.chatrow{
+      display: flex;
+      width:100%
+  }
+
+.chatcolumn1{
+      width: 10%;
+      margin-left: 2%;
+      margin-top: 2%;
+
+  }
+
+.chatcolumn2{
+    width: 80%;
+    margin-top: 2%;
+    margin-left: 2%;
+    border-bottom: 1px solid  rgb(179, 177, 177);
+    height:145px;
+}
+
+.image{
+    border-radius: 50%;
+    height: 80px;
+    width: 80px;
+    /* background-image: url('https://i.pravatar.cc/300'); */
+    background-size: 80px 80px;
+}
+
+.info{
+    font-size: 14px;
+    color: grey;
+    padding-bottom: 20px;
+
+}
+
+.paragraph{
+    margin-bottom: 0px;
+    font-size: 16px;
+}
