@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import axios from 'axios';
 import Chatbox from './components/chatbox';
+import Login from './components/login';
 import './componentcss/homepage.css'
 
 
@@ -9,7 +10,7 @@ import './componentcss/homepage.css'
 function App() {
   const [messages, Setmessages ] = useState([]);
   const [newMessage, SetnewMessage] = useState('');
-  // const [currentUser, SetcurrentUser] = useState({});
+  const [currentUser, SetcurrentUser] = useState({});
   const [currentMessage, SetcurrentMessage] = useState([])
 
   useEffect(()=>{
@@ -31,7 +32,12 @@ if(currentMessage.length){
 }
 
 
+
 },[currentMessage])
+
+useEffect(()=>{
+  console.log('updated current user to :', currentUser)
+}, [currentUser])
 
   const typeFn=(e)=>{
    SetnewMessage(e.target.value)
@@ -92,6 +98,9 @@ if(currentMessage.length){
 
           </div>
 </div>
+{
+  <Login user={currentUser} setUser={SetcurrentUser}/>
+}
 </>
   
 
