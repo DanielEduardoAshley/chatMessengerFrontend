@@ -111,7 +111,7 @@ useEffect(()=>{
           </div>
 </div>
 {
-  <Login user={currentUser} setUser={SetcurrentUser} status={SetloginStatus}/>
+  <Login user={currentUser} setUser={SetcurrentUser} status={SetloginStatus} number={messages.length + 1}/>
 }
 </>
   
