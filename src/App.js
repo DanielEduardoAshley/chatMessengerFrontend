@@ -48,7 +48,16 @@ useEffect(()=>{
     window.location.reload(false);
 
   }else{
-   SetcurrentMessage(currentMessage.concat({'currentMessage': newMessage }));
+   SetcurrentMessage(currentMessage.concat(
+   {
+   avatar: "https://i.pravatar.cc/300?img=4",
+   text_body: newMessage,
+   time_posted: 5,
+   username: currentUser,
+
+   }
+   
+   ));
        }
   }
 
@@ -89,12 +98,12 @@ useEffect(()=>{
                       </div>
                   </div>
 
-                  <div className="header2">
+                  {/* <div className="header2">
                        <div className='textstyle2'>
                            <div className='text2'>ONLINE USERS</div>
                         </div>
                        <div className="column-5"></div>
-                  </div>
+                  </div> */}
                  
                   
                   

@@ -19,6 +19,7 @@ function Login(props) {
     const setUser=()=>{
         props.setUser(newUser)
         props.status(true)
+        
         handleClose()
 
     }
