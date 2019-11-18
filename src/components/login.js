@@ -15,7 +15,7 @@ function Login(props) {
         console.log(newUser)
     }
 
-    const setUser=()=>{
+    const setUser= async()=>{
         props.setUser(newUser)
         props.status(true)
         // axios({
@@ -27,13 +27,15 @@ function Login(props) {
         
             
         //   }});
-        axios.post('http://localhost:3004/user', 
+        const carson = await axios.post('http://localhost:3004/root/user', 
         { 
             'username' : newUser,
-            'avatar'   : `https://i.pravatar.cc/300?img=${props.number}`
+            'avatar'   : `https://i.pravatar.cc/300?`
     
         })
 
+        console.log('carson',carson.data.id)
+        props.userID(carson.data.id)
         handleClose()
 
     }

@@ -11,11 +11,12 @@ function App() {
   const [messages, Setmessages ] = useState([]);
   const [newMessage, SetnewMessage] = useState('');
   const [currentUser, SetcurrentUser] = useState({});
+  const [userID, SetuserID] = useState(0);
   const [currentMessage, SetcurrentMessage] = useState([]);
   const [loginStatus, SetloginStatus] = useState(false);
 
   useEffect(()=>{
-    axios.get('http://localhost:3004/').then((response)=>{
+    axios.get('http://localhost:3004/root/').then((response)=>{
        console.log(response.data)
        Setmessages((messages)=>messages.concat(response.data))
   })
@@ -49,15 +50,23 @@ useEffect(()=>{
 
   }else{
    SetcurrentMessage(currentMessage.concat(
-   {
-   avatar: "https://i.pravatar.cc/300?img=4",
-   text_body: newMessage,
-   time_posted: 5,
-   username: currentUser,
+    {
+     avatar: "https://i.pravatar.cc/300?img=4",
+     text_body: newMessage,
+     time_posted: 5,
+     username: currentUser,
 
-   }
+    }
+
+  
    
    ));
+console.log('msgid', newMessage, userID)
+   axios.post('http://localhost:3004/root/message', 
+    {
+     text_body : newMessage,
+     user_id: userID
+    })
        }
   }
 
@@ -111,7 +120,7 @@ useEffect(()=>{
           </div>
 </div>
 {
-  <Login user={currentUser} setUser={SetcurrentUser} status={SetloginStatus} number={messages.length + 1}/>
+  <Login userID={SetuserID} setUser={SetcurrentUser} status={SetloginStatus} number={messages.length + 1}/>
 }
 </>
   
